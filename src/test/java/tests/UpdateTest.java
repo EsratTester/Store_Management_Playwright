@@ -11,7 +11,7 @@ import utilities.ExtentFactory;
 
 import java.io.IOException;
 
-public class ProductTest extends BaseDriver {
+public class UpdateTest extends BaseDriver {
     ExtentReports report;
     ExtentTest parentTest;
     ExtentTest childTest;
@@ -29,7 +29,7 @@ public class ProductTest extends BaseDriver {
         launchApplication(url);
     }
     @Test
-    public void productTest() throws IOException {
+    public void updateTest() throws IOException {
         childTest = parentTest.createNode("<p style=\"color:#3E96E7; font-size:20px\"><b>Login</b></p>");
 
         // Perform login before adding a product
@@ -37,8 +37,8 @@ public class ProductTest extends BaseDriver {
         loginPage.login();
 
         // Now add a product
-        AddProduct addProduct = new AddProduct(page, childTest);
-        addProduct.addProducts();
+        UpdateProduct updateProduct = new UpdateProduct(page, childTest);
+        updateProduct.updateProducts();
     }
 
     @AfterClass
